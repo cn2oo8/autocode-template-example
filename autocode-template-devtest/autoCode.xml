@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<autoMake
+        xmlns="https://cn2oo8.github.io/molicode_doc/schema/autoCode"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://cn2oo8.github.io/molicode_doc/schema/autoCode https://cn2oo8.github.io/molicode_doc/schema/autoCode/autoCode-1.0.xsd">
+
+    <moliCodeVersion>1.0.0</moliCodeVersion>
+
+    <properties>
+        <!-- 代码片段配置文件，将部分公用的代码抽取出来放置到此处 -->
+        <property key="snippet.template.path">config/molicode/snippetTemplate.xml</property>
+        <!-- 用户自定义的配置文件，配置的值以文本方式直接可以在：extendConf.get("") 到-->
+        <property key="extend.text.config">config/molicode/extendConfig.xml</property>
+        <!-- 页面依赖资源配置文件（可支持requirejs和 普通引入）-->
+        <property key="pagerequire.map.config">config/molicode/requireConfig.xml</property>
+        <!-- 数据库类型到java类型映射-->
+        <property key="dbtype.javatype.map.config">config/molicode/db2javaTypeMap.xml</property>
+        <!-- 数据库类型到页面类型映射-->
+        <property key="dbtype.columntag.map.config">config/molicode/dbType2ColumnTagMap.xml</property>
+
+    </properties>
+
+    <templates>
+
+        <template id="deliveryIdGet" name="从ES文档中获取deliveryId"
+                  destFile="/tool_output/deliveryIds.txt" templateFile="templates/tools/deliveryIdGet.gsp">
+            <acceptDataModel>json</acceptDataModel>
+        </template>
+
+        <template id="yaoMonthPay" name="计算逾期总额"
+                  destFile="moli_code_front.out" templateFile="templates/tools/yaoMonthPay.gsp">
+            <acceptDataModel>json</acceptDataModel>
+        </template>
+
+
+        <template id="pinGet" name="从ES文档中获取PIN"
+                  destFile="moli_code_front.out" templateFile="templates/tools/pinGet.gsp">
+            <acceptDataModel>json</acceptDataModel>
+        </template>
+
+
+        <template id="directOutputFront" name="直接输出到前台"
+                  destFile="moli_code_front.out" templateFile="templates/tools/directOutputFront.gsp">
+            <acceptDataModel>lineList,cellList</acceptDataModel>
+        </template>
+
+
+        <template id="esListUpdate" name="ES列表更新"
+                  destFile="moli_code_front.out" templateFile="templates/es/listUpdate.gsp">
+            <acceptDataModel>json</acceptDataModel>
+        </template>
+
+        <template id="getMethodInfo" name="获取方法列表"
+                  destFile="/tool_output/getMethodInfo.txt" templateFile="templates/javasource/getMethodInfo.gsp">
+            <acceptDataModel>javaSource</acceptDataModel>
+        </template>
+    </templates>
+</autoMake>

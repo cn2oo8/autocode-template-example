@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<autoMake
+        xmlns="https://cn2oo8.github.io/molicode_doc/schema/autoCode"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://cn2oo8.github.io/molicode_doc/schema/autoCode https://cn2oo8.github.io/molicode_doc/schema/autoCode/autoCode-1.0.xsd">
+
+    <moliCodeVersion>1.0.0</moliCodeVersion>
+
+
+    <properties>
+        <!-- 代码片段配置文件，将部分公用的代码抽取出来放置到此处 -->
+        <property key="snippet.template.path">config/molicode/snippetTemplate.xml</property>
+        <!-- 用户自定义的配置文件，配置的值以文本方式直接可以在：extendConf.get("") 到-->
+        <property key="extend.text.config">config/molicode/extendConfig.xml</property>
+        <!-- 页面依赖资源配置文件（可支持requirejs和 普通引入）-->
+        <property key="pagerequire.map.config">config/molicode/requireConfig.xml</property>
+        <!-- 数据库类型到java类型映射-->
+        <property key="dbtype.javatype.map.config">config/molicode/db2javaTypeMap.xml</property>
+        <!-- 数据库类型到页面类型映射-->
+        <property key="dbtype.columntag.map.config">config/molicode/dbType2ColumnTagMap.xml</property>
+
+    </properties>
+
+
+    <templates>
+        <template id="deliveryIdGet" name="从ES文档中获取deliveryId"
+                  destFile="/tool_output/deliveryIds.txt" templateFile="templates/tools/deliveryIdGet.gsp">
+
+        </template>
+
+        <template id="companyIdGet" name="从ES文档中获取companyId"
+                  destFile="moli_code_front.out" templateFile="templates/tools/companyIdGet.gsp">
+
+        </template>
+
+        <template id="pinGet" name="从ES文档中获取PIN"
+                  destFile="moli_code_front.out" templateFile="templates/tools/pinGet.gsp">
+
+        </template>
+
+        <template id="toolTest" name="自定义模板和数据处理"
+                  destFile="/tool_output/toolTest.txt" templateFile="templates/tools/toolTest.gsp">
+
+        </template>
+
+
+        <template id="directOutputFront" name="直接输出到前台"
+                  destFile="moli_code_front.out" templateFile="templates/tools/directOutputFront.gsp">
+
+        </template>
+
+
+        <template id="javaToTableModel" name="java源码类生成表模型"
+                  destFile="/model/tableModel.xml" templateFile="templates/model/javaToTableModel.gsp">
+
+        </template>
+
+
+        <template id="enumList" name="枚举列表"
+                  destFile="/model/enumList.txt" templateFile="templates/model/enumList.gsp">
+
+        </template>
+
+
+
+        <template id="copyBean" name="复制属性"
+                  destFile="moli_code_front.out" templateFile="templates/model/copyBean.gsp">
+
+        </template>
+
+        <template id="beanJsonData" name="bean获取JSON数据"
+                  destFile="moli_code_front.out" templateFile="templates/test/beanJsonData.gsp">
+            <acceptDataModel>javaSource</acceptDataModel>
+        </template>
+
+        <template id="methodList" name="methodList"
+                  destFile="moli_code_front.out" templateFile="templates/model/methodList.gsp">
+            <acceptDataModel>javaSource</acceptDataModel>
+        </template>
+
+
+        <template id="formatJsonToCsv" name="json转换为CSV格式"
+                  destFile="moli_code_front.out" templateFile="templates/tools/formatJsonToCsv.gsp">
+            <acceptDataModel>json</acceptDataModel>
+        </template>
+
+
+    </templates>
+
+
+</autoMake>

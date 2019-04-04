@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://cn2oo8.github.io/molicode_doc/schema/autoCode"
+           xmlns:molicode="https://cn2oo8.github.io/molicode_doc/schema/autoCode"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance"/>
+    <xs:element name="autoMake">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="molicode:moliCodeVersion"/>
+                <xs:element ref="molicode:properties"/>
+                <xs:element ref="molicode:templates"/>
+            </xs:sequence>
+            <xs:attribute ref="xsi:schemaLocation" use="required"/>
+        </xs:complexType>
+        <!-- <xs:unique name="templateUniqueId">
+             <xs:selector xpath="molicode:templates/template"></xs:selector>
+             <xs:field xpath="@id"></xs:field>
+         </xs:unique>-->
+    </xs:element>
+    <xs:element name="moliCodeVersion" type="xs:NMTOKEN"/>
+
+    <xs:element name="properties">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="molicode:property" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="property">
+        <xs:complexType mixed="true">
+            <xs:attribute name="key" use="required" type="xs:NCName"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="snippet.template.path" type="xs:string"/>
+    <xs:element name="extend.text.config" type="xs:string"/>
+    <xs:element name="pagerequire.map.config" type="xs:string"/>
+    <xs:element name="dbtype.javatype.map.config" type="xs:string"/>
+    <xs:element name="dbtype.columntag.map.config" type="xs:string"/>
+
+    <xs:element name="templates">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="molicode:template"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="template">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="identifiedType">
+                    <xs:group ref="templateElements"/>
+                    <xs:attributeGroup ref="templateAttributes"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="acceptDataModel" default="tableModel">
+        <xs:simpleType>
+            <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="tableModel"/>
+                <xs:enumeration value="json"/>
+                <xs:enumeration value="lineList"/>
+                <xs:enumeration value="cellList"/>
+                <xs:enumeration value="javaSource"/>
+                <xs:enumeration value="rawContent"/>
+                <xs:enumeration value="xml"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:group name="templateElements">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="acceptDataModel" minOccurs="0"/>
+                <xs:element name="desc" minOccurs="0"/>
+                <xs:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:attributeGroup name="templateAttributes">
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation><![CDATA[
+				]]></xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="desc" type="xs:string">
+            <xs:annotation>
+                <xs:documentation><![CDATA[
+				]]></xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="destFile" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation><![CDATA[
+				]]></xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="templateFile" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation><![CDATA[
+				]]></xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="engine" default="groovy">
+            <xs:annotation>
+                <xs:documentation><![CDATA[
+                engine is the template engine name, the value could be : groovy, velocity, jxls and so on.
+                it depends on extension.
+				]]></xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                    <xs:enumeration value="groovy"/>
+                    <xs:enumeration value="velocity"/>
+                    <xs:enumeration value="freemarker"/>
+                    <xs:enumeration value="jxls"/>
+                    <xs:enumeration value="thymeleaf"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+    </xs:attributeGroup>
+
+
+    <!-- base types -->
+    <xs:complexType name="identifiedType" abstract="true">
+        <xs:annotation>
+            <xs:documentation><![CDATA[
+	The unique identifier for a template. The scope of the identifier
+	is the enclosing bean factory.
+			]]></xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="id" type="xs:NCName" use="required">
+            <xs:annotation>
+                <xs:documentation><![CDATA[
+	The unique identifier for a template. A template id may not be used more than once
+	within the same <templates> element.
+				]]></xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+</xs:schema>

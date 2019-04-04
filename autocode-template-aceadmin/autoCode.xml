@@ -6,6 +6,21 @@
 
     <moliCodeVersion>1.0.0</moliCodeVersion>
 
+    <mavenInfo>
+        <modelVersion>4.0.0</modelVersion>
+        <artifactId>autocode-template-aceadmin</artifactId>
+        <groupId>com.shareyi.molicode</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <description>基于bootstrap aceadmin前端的模板，底层使用mybatis, spring mvc</description>
+        <developers>
+            <developer>
+                <name>david</name>
+                <email>zsb1987@foxmail.com</email>
+                <organization>www.shareyi.com</organization>
+                <organizationUrl>www.shareyi.com</organizationUrl>
+            </developer>
+        </developers>
+    </mavenInfo>
 
     <properties>
         <!-- 代码片段配置文件，将部分公用的代码抽取出来放置到此处 -->
@@ -18,9 +33,7 @@
         <property key="dbtype.javatype.map.config">config/molicode/db2javaTypeMap.xml</property>
         <!-- 数据库类型到页面类型映射-->
         <property key="dbtype.columntag.map.config">config/molicode/dbType2ColumnTagMap.xml</property>
-
     </properties>
-
 
     <templates>
         <template id="domain" name="domain类"

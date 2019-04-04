@@ -6,6 +6,25 @@
     <moliCodeVersion>1.0.0</moliCodeVersion>
 
 
+    <mavenInfo>
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.shareyi.molicode</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <artifactId>autocode-template-vue</artifactId>
+        <name> 用于版本测试之用；非稳定版本！ </name>
+        <description>VUE页面生成功能</description>
+
+
+        <developers>
+            <developer>
+                <name>david</name>
+                <email>zsb1987@foxmail.com</email>
+                <organization>www.shareyi.com</organization>
+                <organizationUrl>www.shareyi.com</organizationUrl>
+            </developer>
+        </developers>
+    </mavenInfo>
+
     <properties>
         <!-- 代码片段配置文件，将部分公用的代码抽取出来放置到此处 -->
         <property key="snippet.template.path">config/molicode/snippetTemplate.xml</property>

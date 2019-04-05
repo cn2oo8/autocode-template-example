@@ -17,3 +17,9 @@ mybatis, spring, controller+service+manager+dao+mybatis mapper
 
 ## autocode-template-vue
 生成vue相关的界面资源，但是需要一些脚手架才能正常使用。
+
+## more
+请参考项目：
+[https://github.com/cn2oo8/molicode_template_awesome](https://github.com/cn2oo8/molicode_template_awesome)
+
+

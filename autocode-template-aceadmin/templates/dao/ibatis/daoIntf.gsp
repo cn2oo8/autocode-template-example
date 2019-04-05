@@ -2,9 +2,7 @@
   def varDomainName=tableNameUtil.lowerCaseFirst(tableDefine.id);
   def pkColumn=tableDefine.getPkColumn();
   def pkJavaType=tableNameUtil.getDataType(pkColumn?.columnType);
-%>
-${snippetTemplateUtil.getTemplate('copyrightInfo')}
-package ${config.basePackage}.dao${PubUtils.addStrAfterSeparator(config.category,".")};
+%>package ${config.basePackage}.dao${PubUtils.addStrAfterSeparator(config.category,".")};
 
 import java.util.List;
 import ${config.basePackage}.domain${PubUtils.addStrAfterSeparator(config.category,".")}.${tableDefine.id};

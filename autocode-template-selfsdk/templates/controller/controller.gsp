@@ -1,6 +1,4 @@
-${snippetTemplateUtil.getTemplate('copyrightInfo')}
-
- <%
+<%
   def varDomainName=tableNameUtil.lowerCaseFirst(tableDefine.id);
   def serviceName=varDomainName+"Service";
   def pkColumn=tableDefine.getPkColumn();

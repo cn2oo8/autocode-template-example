@@ -1,4 +1,3 @@
-${snippetTemplateUtil.getTemplate('copyrightInfo')}
 <%
     def varDomainName = tableNameUtil.lowerCaseFirst(tableDefine.id);
     def managerName = varDomainName + "Manager";

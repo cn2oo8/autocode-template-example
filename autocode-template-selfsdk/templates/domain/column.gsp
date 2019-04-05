@@ -1,4 +1,3 @@
-${snippetTemplateUtil.getTemplate('copyrightInfo')}
 <%
     def tableDefine = tableModel.tableDefine
     def columns = tableDefine.columns

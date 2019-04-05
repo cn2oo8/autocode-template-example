@@ -1,6 +1,4 @@
-${snippetTemplateUtil.getTemplate('copyrightInfo')}
-
- <%
+<%
   def varDomainName=tableNameUtil.lowerCaseFirst(tableDefine.id);
   def pkColumn=tableDefine.getPkColumn();
   def pkJavaType=tableNameUtil.getDataType(pkColumn?.columnType);

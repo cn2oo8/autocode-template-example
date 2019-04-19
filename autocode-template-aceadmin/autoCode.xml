@@ -73,20 +73,6 @@
 
         </template>
 
-        <!--
-            <template id="ibatisDaoIntf" name="dao接口" destFile="${config.artifactId}-dao/src/main/java/${PubUtils.packageToPath(config.basePackage)}/dao/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Dao.java">
-                templates/dao/ibatis/daoIntf.gsp
-            </template>
-
-            <template id="ibatisDaoImpl" name="dao接口实现" destFile="${config.artifactId}-dao/src/main/java/${PubUtils.packageToPath(config.basePackage)}/dao/${PubUtils.packageToPath(config.category)}/impl/${tableDefine.id}DaoImpl.java">
-                templates/dao/ibatis/daoImpl.gsp
-            </template>
-
-            <template id="ibatisMapper" name="ibatisMapper" destFile="${config.artifactId}-dao/src/main/resources/sqlmap/${PubUtils.packageToPath(config.category)}/${tableDefine.id}.xml">
-                templates/mapper/ibatis/mapper.gsp
-            </template>
-             -->
-
         <template id="mybatisDaoIntf" name="dao接口"
                   destFile="${config.artifactId}-dao/src/main/java/${PubUtils.packageToPath(config.basePackage)}/dao/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Dao.java"
                   templateFile="templates/dao/mybatis/daoIntf.gsp">

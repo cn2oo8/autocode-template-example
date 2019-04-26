@@ -6,6 +6,8 @@
 
 import ${config.basePackage}.domain${PubUtils.addStrAfterSeparator(config.category,"." )}.${tableDefine.id};
 import ${config.basePackage}.dao.BaseDao;
+import java.util.List;
+import java.util.Map;
 
 /**
  * ${tableDefine.cnname} Dao接口类

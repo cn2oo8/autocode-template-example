@@ -13,21 +13,21 @@
             def listSize=list.size()
             int i=0;
             list.each{
-                if(i%3 == 0){
+                if(i%4 == 0){
                     println "<Row>"
                 }
                 def column=tableDefine.getColumnByColumnName(it);
 
 
                 if("Select".equalsIgnoreCase(column.jspTag)) {%>
-                <Col span="7">
+                <Col span="6">
                     <FormItem label="${column.cnname}" prop="${column.dataName}">
                         <dict-select v-model="formSearch.${column.dataName}" :kind="this.constants.dicts.dictKinds.${column.dictName}" :clearable="true"></dict-select>
                     </FormItem>
                 </Col>
                 <%}else {
                 %>
-                <Col span="7">
+                <Col span="6">
                     <FormItem label="${column.cnname}" prop="${column.dataName}">
                         <Input v-model="formSearch.${column.dataName}" placeholder="请输入${column.cnname}"></Input>
                     </FormItem>
@@ -37,7 +37,7 @@
                 }
 
                 i++;
-                if(i%3 == 0 || i== list.size() ){
+                if(i%4 == 0 || i== list.size() ){
                     println "</Row>"
                 }
             }

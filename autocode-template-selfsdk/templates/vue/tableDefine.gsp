@@ -71,6 +71,7 @@ data() {
               if("Select".equalsIgnoreCase(column.jspTag)) {%>
                 {
                   title: '${column.cnname}',
+                  width: 100,
                   render: (h, params) => {
                      return h(dictLabel, {
                          props: {
@@ -85,6 +86,7 @@ data() {
                 {
                  title: '${column.cnname}',
                   key: '${column.dataName}',
+                  width: 100,
                   render: (h, params) => {
                       return h('div', renderUtil.formatDateTime(params.row.${column.dataName}))
                   }
@@ -92,7 +94,8 @@ data() {
             <%}else {%>
               {
                   title: '${column.cnname}',
-                  key: '${column.dataName}'
+                  key: '${column.dataName}',
+                  width: 100
                 },
               <%}
 
@@ -101,7 +104,7 @@ data() {
             {
                 title: '操作',
                 key: 'action',
-                width: 250,
+                width: 150,
                 align: 'center',
                 render: (h, params) => {
                     return h(operate, {

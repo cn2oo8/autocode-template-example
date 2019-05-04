@@ -28,15 +28,23 @@ public class ${tableDefine.id}ServiceImpl extends
 
     protected static final Logger LOGGER = LoggerFactory.getLogger(${tableDefine.id}ServiceImpl.class);
 
+    /**
+    * 验证服务
+    */
     @Resource(name="${varDomainName}Validator")
     private ${tableDefine.id}Validator ${varDomainName}Validator;
 
-    @Resource(name="${managerName}")
+  /**
+   * 数据库代理层
+   */
+  @Resource(name="${managerName}")
     private ${tableDefine.id}Manager ${managerName};
 
-    @Resource(name="${varDomainName}Builder")
+  /**
+   * 对象构建器
+   */
+  @Resource(name="${varDomainName}Builder")
     private ${tableDefine.id}Builder ${varDomainName}Builder;
-
 
     /******* getter and setter ***/
     @Override

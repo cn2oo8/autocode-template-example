@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<autoMake
+        xmlns="https://cn2oo8.github.io/molicode_doc/schema/autoCode"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://cn2oo8.github.io/molicode_doc/schema/autoCode https://cn2oo8.github.io/molicode_doc/schema/autoCode/autoCode-1.0.xsd">
+
+    <moliCodeVersion>1.0.0</moliCodeVersion>
+
+    <mavenInfo>
+        <modelVersion>4.0.0</modelVersion>
+        <artifactId>autocode-template-aceadmin</artifactId>
+        <groupId>com.shareyi.molicode</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <description>基于bootstrap aceadmin前端的模板，底层使用mybatis, spring mvc</description>
+        <developers>
+            <developer>
+                <name>david</name>
+                <email>zsb1987@foxmail.com</email>
+                <organization>www.shareyi.com</organization>
+                <organizationUrl>www.shareyi.com</organizationUrl>
+            </developer>
+        </developers>
+    </mavenInfo>
+
+    <properties>
+        <!-- 代码片段配置文件，将部分公用的代码抽取出来放置到此处 -->
+        <property key="snippet.template.path">config/molicode/snippetTemplate.xml</property>
+        <!-- 用户自定义的配置文件，配置的值以文本方式直接可以在：extendConf.get("") 到-->
+        <property key="extend.text.config">config/molicode/extendConfig.xml</property>
+        <!-- 页面依赖资源配置文件（可支持requirejs和 普通引入）-->
+        <property key="pagerequire.map.config">config/molicode/requireConfig.xml</property>
+        <!-- 数据库类型到java类型映射-->
+        <property key="dbtype.javatype.map.config">config/molicode/db2javaTypeMap.xml</property>
+        <!-- 数据库类型到页面类型映射-->
+        <property key="dbtype.columntag.map.config">config/molicode/dbType2ColumnTagMap.xml</property>
+    </properties>
+
+    <templates>
+
+        <template id="domain" name="domain类"
+                  destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/domain/${PubUtils.packageToPath(config.category)}/${tableDefine.id}.java"
+                  templateFile="templates/domain/domain.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+
+        <template id="builder" name="builder类"
+                  destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/builder/impl/${tableDefine.id}Builder.java"
+                  templateFile="templates/domain/builder.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+
+        <template id="column" name="column 枚举"
+                  destFile="/${config.artifactId}-common/src/main/java/${PubUtils.packageToPath(config.basePackage)}/common/enums/columns/${tableDefine.id}Column.java"
+                  templateFile="templates/domain/column.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+
+        </template>
+
+
+        <template id="mybatisDaoIntf" name="dao接口"
+                  destFile="${config.artifactId}-dao/src/main/java/${PubUtils.packageToPath(config.basePackage)}/dao/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Dao.java"
+                  templateFile="templates/dao/mybatis/daoIntf.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+
+        </template>
+
+        <template id="mybatisMapper" name="mybatisMapper"
+                  destFile="${config.artifactId}-dao/src/main/resources/mapper/${tableDefine.id}.xml"
+                  templateFile="templates/mapper/mybatis/mapper.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+
+        </template>
+
+
+        <template id="managerIntf" name="manager 接口"
+                  destFile="/${config.artifactId}-manager/src/main/java/${PubUtils.packageToPath(config.basePackage)}/manager/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Manager.java"
+                  templateFile="templates/manager/managerIntf.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+
+        </template>
+        <template id="managerImpl" name="manager接口 实现"
+                  destFile="/${config.artifactId}-manager/src/main/java/${PubUtils.packageToPath(config.basePackage)}/manager/${PubUtils.packageToPath(config.category)}/impl/${tableDefine.id}ManagerImpl.java"
+                  templateFile="templates/manager/managerImpl.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+
+        </template>
+
+
+        <template id="serviceIntf" name="service SDK 接口"
+                  destFile="/${config.artifactId}-service/src/main/java/${PubUtils.packageToPath(config.basePackage)}/service/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Service.java"
+                  templateFile="templates/service/serviceIntf.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+
+        </template>
+
+        <template id="serviceImpl" name="service SDK 接口 实现"
+                  destFile="/${config.artifactId}-service/src/main/java/${PubUtils.packageToPath(config.basePackage)}/service/${PubUtils.packageToPath(config.category)}/impl/${tableDefine.id}ServiceImpl.java"
+                  templateFile="templates/service/serviceImpl.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+
+        </template>
+
+        <template id="validator" name="validator SDK验证"
+                  destFile="/${config.artifactId}-service/src/main/java/${PubUtils.packageToPath(config.basePackage)}/validate/provide/${tableDefine.id}Validator.java"
+                  templateFile="templates/service/validator.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
+
+        </template>
+
+
+
+        <!-- springmvc controller模板 -->
+        <template id="Controller" name="Controller类"
+                  destFile="/${config.artifactId}-web/src/main/java/${PubUtils.packageToPath(config.basePackage)}/controller/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Controller.java"
+                  templateFile="templates/controller/controller.gsp">
+        </template>
+
+
+        <template id="manage" name="manage页面"
+                  destFile="/${config.artifactId}-web/src/main/webapp/WEB-INF/vm/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/manage.vm"
+                  templateFile="templates/page/aceadmin/manage.gsp">
+            templates/page/aceadmin/manage.gsp
+        </template>
+        <template id="list" name="list页面"
+                  destFile="/${config.artifactId}-web/src/main/webapp/WEB-INF/vm/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/list.vm"
+                  templateFile="templates/page/aceadmin/list.gsp">
+            templates/page/aceadmin/list.gsp
+        </template>
+        <template id="add" name="add页面"
+                  destFile="/${config.artifactId}-web/src/main/webapp/WEB-INF/vm/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/add.vm"
+                  templateFile="templates/page/aceadmin/add.gsp">
+
+        </template>
+        <template id="update" name="update页面"
+                  destFile="/${config.artifactId}-web/src/main/webapp/WEB-INF/vm/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/update.vm"
+                  templateFile="templates/page/aceadmin/update.gsp">
+
+        </template>
+        <template id="view" name="view页面"
+                  destFile="/${config.artifactId}-web/src/main/webapp/WEB-INF/vm/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/view.vm"
+                  templateFile="templates/page/aceadmin/view.gsp">
+
+        </template>
+    </templates>
+</autoMake>

@@ -20,16 +20,25 @@ import ${config.basePackage}.builder.impl.${tableDefine.id}Builder;
 @Component("${varDomainName}Manager")
 public class ${tableDefine.id}ManagerImpl extends AbstractManager<${tableDefine.id}> implements ${tableDefine.id}Manager {
 
+    /**
+    * 访问层
+    */
     @Resource
     private ${tableDefine.id}Dao ${varDomainName}Dao;
+    /**
+    * bean构建服务
+    */
     @Resource(name="${varDomainName}Builder")
     ${tableDefine.id}Builder ${varDomainName}Builder;
 
 
     /******* getter and setter ***/
-    public ${tableDefine.id}Builder getBuilder() {
+     @Override
+     public ${tableDefine.id}Builder getBuilder() {
         return ${varDomainName}Builder;
     }
+
+    @Override
     public ${tableDefine.id}Dao getDao() {
         return ${varDomainName}Dao;
     }

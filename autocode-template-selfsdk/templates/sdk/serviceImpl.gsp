@@ -39,10 +39,11 @@ public class ${tableDefine.id}ServiceImpl extends
 
 
     /******* getter and setter ***/
+    @Override
     public ${tableDefine.id}Manager getManager() {
         return ${varDomainName}Manager;
     }
-
+    @Override
     public ${tableDefine.id}Validator getValidator() {
         return ${varDomainName}Validator;
     }

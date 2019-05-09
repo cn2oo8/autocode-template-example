@@ -23,3 +23,6 @@ mybatis, spring, controller+service+manager+dao+mybatis mapper
 [https://github.com/cn2oo8/molicode_template_awesome](https://github.com/cn2oo8/molicode_template_awesome)
 
 
+## 社交
+QQ群名称：molicode技术交流群 群号：753207541
+欢迎加入沟通交流答疑群；

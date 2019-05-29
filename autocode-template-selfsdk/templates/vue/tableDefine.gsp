@@ -104,6 +104,7 @@ data() {
             {
                 title: '操作',
                 key: 'action',
+                fixed: 'right',
                 width: 150,
                 align: 'center',
                 render: (h, params) => {
@@ -148,8 +149,7 @@ data() {
 %>
         },
         searchFormRules: searchFormRules,
-        constants,
-        localDicts
+        constants
     }
 },
 mounted() {

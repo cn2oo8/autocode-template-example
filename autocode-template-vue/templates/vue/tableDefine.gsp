@@ -29,33 +29,6 @@ const searchFormRules = {
 %>
 };
 
-const dictKinds = {
-LOCAL_LABEL_DICT: 'local_label_dict'
-}
-const localDicts = {
-dictKinds,
-dictData: {
-    [dictKinds.LOCAL_LABEL_DICT]: [{
-        kind: dictKinds.LOCAL_LABEL_DICT,
-        itemKey: '1',
-        'itemName': '标签1',
-        'parentKind': '',
-        'parentKey': '',
-        'sortNum': 1,
-        'cssType': 'blue'
-    }, {
-        kind: dictKinds.LOCAL_LABEL_DICT,
-        itemKey: '2',
-        'itemName': '标签2',
-        'parentKind': '',
-        'parentKey': '',
-        'sortNum': 1,
-        'cssType': 'red'
-    }
-    ]
-}
-}
-
 let tableDefine = {
 data() {
     return {
@@ -105,6 +78,7 @@ data() {
                 title: '操作',
                 key: 'action',
                 width: 150,
+                fixed: 'right',
                 align: 'center',
                 render: (h, params) => {
                     return h(operate, {
@@ -148,8 +122,7 @@ data() {
 %>
         },
         searchFormRules: searchFormRules,
-        constants,
-        localDicts
+        constants
     }
 },
 mounted() {

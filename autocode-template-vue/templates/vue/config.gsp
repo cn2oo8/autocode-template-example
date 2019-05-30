@@ -21,5 +21,5 @@ export default {
             }
         }
     },
-    dicts:${customTool['tableModelDictDefineJson'](tableModel,'\t\t\t')}
+    dicts:${customTool['tableModelDictDefineJson'](tableModel,'')}
 }

@@ -38,7 +38,9 @@
             def oneDictDefine = dictDefineJson(dict, formatPrepend);
             dictRuleMap.put(key, oneDictDefine);
         }
-        return JSON.toJSONString(dictRuleMap,com.alibaba.fastjson.serializer.SerializerFeature.PrettyFormat);
+        return JSON.toJSONString(dictRuleMap,
+                com.alibaba.fastjson.serializer.SerializerFeature.PrettyFormat,
+                com.alibaba.fastjson.serializer.SerializerFeature.UseSingleQuotes);
     }
 
     customTool['tableModelDictDefineJson'] = tableModelDictDefineJson;

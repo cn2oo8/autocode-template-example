@@ -18,6 +18,21 @@ mybatis, spring, controller+service+manager+dao+mybatis mapper
 ## autocode-template-vue
 生成vue相关的界面资源，但是需要一些脚手架才能正常使用。
 
+相关脚手架可以从以下地址分支获取：
+https://github.com/cn2oo8/iview-admin/tree/d_20190525_clean_more 
+
+
+主要有: src/constants 下的常量工具如：
+constants.js,     dicts.js,     urls.js
+
+src/lib目录下的： renderUtil.js 工具；
+
+src/request/ 目录下的： axiosInstance.js, requestUtil.js
+
+/src/view/components/common 下的字典相关组件，需要配合：/src/store/module/dict.js使用；
+
+
+
 ## more
 请参考项目：
 [https://github.com/cn2oo8/molicode_template_awesome](https://github.com/cn2oo8/molicode_template_awesome)

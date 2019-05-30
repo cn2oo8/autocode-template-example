@@ -61,5 +61,10 @@
                   destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/tableDefine.js"
                   templateFile="templates/vue/tableDefine.gsp">
         </template>
+
+        <template id="config" name="config"
+                  destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/config.js"
+                  templateFile="templates/vue/config.gsp">
+        </template>
     </templates>
 </autoMake>

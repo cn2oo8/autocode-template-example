@@ -62,7 +62,7 @@
 		<div style="margin: 10px;overflow: hidden">
 			<div style="float: right;">
 				<Page :total="queryResult.pageQuery.totalCount" :pageSize="queryResult.pageQuery.pageSize"
-					  :current="queryResult.pageQuery.pageNo" @on-page-size-change="loadPageSizeChange"
+					  :current="queryResult.pageQuery.currentPageNo" @on-page-size-change="loadPageSizeChange"
 					  @on-change="loadPageNoChange" show-total show-elevator show-sizer></Page>
 			</div>
 		</div>
@@ -88,7 +88,7 @@
                 this.loadData()
             },
             loadPageNoChange(pageNo) {
-                this.queryResult.pageQuery.pageNo = pageNo
+                this.queryResult.pageQuery.currentPageNo = pageNo
                 this.loadData()
             },
             loadData() {
@@ -97,7 +97,8 @@
                 this.\$refs['formSearch'].validate((valid) => {
                     if (valid) {
                         var searchParam = requestUtils.serializeObject(this.formSearch, true, true)
-                        searchParam['pageSize'] = _this.queryResult.pageQuery.pageSize
+                        searchParam['pageSize'] = _this.queryResult.pageQuery.pageSize;
+                        searchParam['page'] = _this.queryResult.pageQuery.currentPageNo;
                         requestUtils.postSubmit(_this, constants.urls.${urlPrefix}.list, searchParam, function (data) {
                             _this.queryResult.dataList = data.value
                             _this.queryResult.pageQuery = data.pageQuery

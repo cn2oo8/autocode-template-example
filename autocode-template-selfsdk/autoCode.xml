@@ -153,6 +153,11 @@
         </template>
 
 
+        <template id="configVue" name="configVue配置信息"
+                  destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/config.js"
+                  templateFile="templates/vue/config.gsp">
+        </template>
+
         <template id="tableInfo" name="表结构"
                   destFile="/${config.artifactId}-web/src/main/resources/temp/${tableDefine.id}TableInfo.txt"
                   templateFile="templates/config/tableInfo.gsp">

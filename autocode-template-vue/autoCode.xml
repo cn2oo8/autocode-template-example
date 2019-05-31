@@ -11,7 +11,7 @@
         <groupId>com.shareyi.molicode</groupId>
         <version>1.0-SNAPSHOT</version>
         <artifactId>autocode-template-vue</artifactId>
-        <name> 用于版本测试之用；非稳定版本！ </name>
+        <name>用于版本测试之用；非稳定版本！</name>
         <description>VUE页面生成功能</description>
 
 
@@ -44,27 +44,37 @@
         <template id="addPage" name="add页面"
                   destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/add.vue"
                   templateFile="templates/vue/add.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
         <template id="editPage" name="edit页面"
                   destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/edit.vue"
                   templateFile="templates/vue/edit.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
         <template id="listPage" name="list页面"
                   destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/list.vue"
                   templateFile="templates/vue/list.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
         <template id="operatePage" name="operate页面"
                   destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/operate.vue"
                   templateFile="templates/vue/operate.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
+            <desc>operate页面</desc>
         </template>
         <template id="tableDefineVue" name="tableDefineVue"
                   destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/tableDefine.js"
                   templateFile="templates/vue/tableDefine.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
+            <desc>表结构模型</desc>
+
         </template>
 
         <template id="config" name="config"
                   destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/config.js"
                   templateFile="templates/vue/config.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
+            <desc>一些配置信息，请复制到相关常量类使用</desc>
         </template>
     </templates>
 </autoMake>

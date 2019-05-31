@@ -11,8 +11,13 @@
         <groupId>com.shareyi.molicode</groupId>
         <version>1.0-SNAPSHOT</version>
         <artifactId>autocode-template-vue</artifactId>
-        <name>用于版本测试之用；非稳定版本！</name>
-        <description>VUE页面生成功能</description>
+        <name>VUE+iview页面生成功能</name>
+        <description>
+            适配iview-admin相关组件，请参考地址：
+            https://github.com/cn2oo8/iview-admin/tree/d_20190525_clean_more
+
+            分支请使用：d_20190525_clean_more
+        </description>
 
 
         <developers>

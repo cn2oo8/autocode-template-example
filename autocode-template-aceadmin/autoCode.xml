@@ -74,19 +74,19 @@
         </template>
 
         <template id="mybatisDaoIntf" name="dao接口"
-                  destFile="${config.artifactId}-dao/src/main/java/${PubUtils.packageToPath(config.basePackage)}/dao/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Dao.java"
+                  destFile="/${config.artifactId}-dao/src/main/java/${PubUtils.packageToPath(config.basePackage)}/dao/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Dao.java"
                   templateFile="templates/dao/mybatis/daoIntf.gsp">
 
         </template>
 
         <template id="mybatisMapper" name="mybatisMapper"
-                  destFile="${config.artifactId}-dao/src/main/resources/sqlmap/${PubUtils.packageToPath(config.category)}/${tableDefine.id}.xml"
+                  destFile="/${config.artifactId}-dao/src/main/resources/sqlmap/${PubUtils.packageToPath(config.category)}/${tableDefine.id}.xml"
                   templateFile="templates/mapper/mybatis/mapper.gsp">
 
         </template>
 
 
-        <template id="config" name="配置文件的一些模板" destFile="${config.artifactId}-web/src/main/resources/config.txt"
+        <template id="config" name="配置文件的一些模板" destFile="/${config.artifactId}-web/src/main/resources/config.txt"
                   templateFile="templates/config/config.gsp">
 
         </template>

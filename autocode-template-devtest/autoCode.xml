@@ -58,9 +58,9 @@
         </template>
 
 
-        <template id="directOutputFront" name="直接输出到前台"
-                  destFile="moli_code_front.out" templateFile="templates/tools/directOutputFront.gsp">
-            <acceptDataModel>lineList,cellList</acceptDataModel>
+        <template id="filterEnglish" name="只保留非英文字符"
+                  destFile="/tool_output/filterEnglish" templateFile="templates/tools/filterEnglish.gsp">
+            <acceptDataModel>lineList</acceptDataModel>
         </template>
 
 
@@ -72,6 +72,19 @@
         <template id="getMethodInfo" name="获取方法列表"
                   destFile="/tool_output/getMethodInfo.txt" templateFile="templates/javasource/getMethodInfo.gsp">
             <acceptDataModel>javaSource</acceptDataModel>
+        </template>
+
+
+
+        <template id="sumNumber" name="数字求和"
+                  destFile="/tool_output/sumNumber.txt" templateFile="templates/tools/sumNumber.gsp">
+            <acceptDataModel>lineList</acceptDataModel>
+        </template>
+
+
+        <template id="voteUserInfo" name="投票人员信息"
+                  destFile="/tool_output/voteUserInfo.txt" templateFile="templates/tools/voteUserInfo.gsp">
+            <acceptDataModel>cellList</acceptDataModel>
         </template>
     </templates>
 </autoMake>

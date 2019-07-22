@@ -39,20 +39,6 @@
 
 
     <templates>
-        <template id="deliveryIdGet" name="从ES文档中获取deliveryId"
-                  destFile="/tool_output/deliveryIds.txt" templateFile="templates/tools/deliveryIdGet.gsp">
-
-        </template>
-
-        <template id="companyIdGet" name="从ES文档中获取companyId"
-                  destFile="moli_code_front.out" templateFile="templates/tools/companyIdGet.gsp">
-
-        </template>
-
-        <template id="pinGet" name="从ES文档中获取PIN"
-                  destFile="moli_code_front.out" templateFile="templates/tools/pinGet.gsp">
-
-        </template>
 
         <template id="toolTest" name="自定义模板和数据处理"
                   destFile="/tool_output/toolTest.txt" templateFile="templates/tools/toolTest.gsp">
@@ -60,28 +46,21 @@
         </template>
 
 
-        <template id="directOutputFront" name="直接输出到前台"
-                  destFile="moli_code_front.out" templateFile="templates/tools/directOutputFront.gsp">
-
-        </template>
-
-
         <template id="javaToTableModel" name="java源码类生成表模型"
                   destFile="/model/tableModel.xml" templateFile="templates/model/javaToTableModel.gsp">
-
+            <acceptDataModel>javaSource</acceptDataModel>
         </template>
 
 
         <template id="enumList" name="枚举列表"
                   destFile="/model/enumList.txt" templateFile="templates/model/enumList.gsp">
-
+            <acceptDataModel>javaSource</acceptDataModel>
         </template>
-
 
 
         <template id="copyBean" name="复制属性"
                   destFile="moli_code_front.out" templateFile="templates/model/copyBean.gsp">
-
+            <acceptDataModel>javaSource</acceptDataModel>
         </template>
 
         <template id="beanJsonData" name="bean获取JSON数据"

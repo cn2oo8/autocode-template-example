@@ -47,75 +47,75 @@
         <template id="Controller" name="Controller类"
                   destFile="/${config.artifactId}-web/src/main/java/${PubUtils.packageToPath(config.basePackage)}/controller/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Controller.java"
                   templateFile="templates/controller/controller.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
 
 
         <template id="serviceIntf" name="service接口"
                   destFile="/${config.artifactId}-service/src/main/java/${PubUtils.packageToPath(config.basePackage)}/service/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Service.java"
                   templateFile="templates/service/serviceIntf.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
         <template id="serviceImpl" name="service接口 实现"
                   destFile="/${config.artifactId}-service/src/main/java/${PubUtils.packageToPath(config.basePackage)}/service/${PubUtils.packageToPath(config.category)}/impl/${tableDefine.id}ServiceImpl.java"
                   templateFile="templates/service/serviceImpl.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
 
         <template id="managerIntf" name="manager 接口"
                   destFile="/${config.artifactId}-manager/src/main/java/${PubUtils.packageToPath(config.basePackage)}/manager/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Manager.java"
                   templateFile="templates/manager/managerIntf.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
         <template id="managerImpl" name="manager接口 实现"
                   destFile="/${config.artifactId}-manager/src/main/java/${PubUtils.packageToPath(config.basePackage)}/manager/${PubUtils.packageToPath(config.category)}/impl/${tableDefine.id}ManagerImpl.java"
                   templateFile="templates/manager/managerImpl.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
 
         <template id="mybatisDaoIntf" name="dao接口"
                   destFile="/${config.artifactId}-dao/src/main/java/${PubUtils.packageToPath(config.basePackage)}/dao/${PubUtils.packageToPath(config.category)}/${tableDefine.id}Dao.java"
                   templateFile="templates/dao/mybatis/daoIntf.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
 
         <template id="mybatisMapper" name="mybatisMapper"
                   destFile="/${config.artifactId}-dao/src/main/resources/sqlmap/${PubUtils.packageToPath(config.category)}/${tableDefine.id}.xml"
                   templateFile="templates/mapper/mybatis/mapper.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
 
 
         <template id="config" name="配置文件的一些模板" destFile="/${config.artifactId}-web/src/main/resources/config.txt"
                   templateFile="templates/config/config.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
 
 
         <template id="manage" name="manage页面"
                   destFile="/${config.artifactId}-web/src/main/webapp/WEB-INF/vm/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/manage.vm"
                   templateFile="templates/page/aceadmin/manage.gsp">
-            templates/page/aceadmin/manage.gsp
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
         <template id="list" name="list页面"
                   destFile="/${config.artifactId}-web/src/main/webapp/WEB-INF/vm/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/list.vm"
                   templateFile="templates/page/aceadmin/list.gsp">
-            templates/page/aceadmin/list.gsp
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
         <template id="add" name="add页面"
                   destFile="/${config.artifactId}-web/src/main/webapp/WEB-INF/vm/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/add.vm"
                   templateFile="templates/page/aceadmin/add.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
         <template id="update" name="update页面"
                   destFile="/${config.artifactId}-web/src/main/webapp/WEB-INF/vm/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/update.vm"
                   templateFile="templates/page/aceadmin/update.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
         <template id="view" name="view页面"
                   destFile="/${config.artifactId}-web/src/main/webapp/WEB-INF/vm/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/view.vm"
                   templateFile="templates/page/aceadmin/view.gsp">
-
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
     </templates>
 </autoMake>

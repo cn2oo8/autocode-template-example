@@ -156,6 +156,7 @@
         <template id="configVue" name="configVue配置信息"
                   destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/config.js"
                   templateFile="templates/vue/config.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
         </template>
 
         <template id="tableInfo" name="表结构"

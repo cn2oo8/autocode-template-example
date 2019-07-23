@@ -47,7 +47,7 @@
 
 
         <template id="javaToTableModel" name="java源码类生成表模型"
-                  destFile="/model/tableModel.xml" templateFile="templates/model/javaToTableModel.gsp">
+                  destFile="model/tableModel.xml" templateFile="templates/model/javaToTableModel.gsp">
             <acceptDataModel>javaSource</acceptDataModel>
         </template>
 

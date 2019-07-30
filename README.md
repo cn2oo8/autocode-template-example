@@ -1,6 +1,17 @@
 # autocode-template-example
 代码模板示例
 
+## 工具在线试用
+感谢 @我的兄弟叫代码 提供服务器资源
+
+http://molicode.shareyi.com
+
+http://39.98.242.10 （备用）
+
+用户请自行注册；
+
+因为涉及模板动态化风险，为保证 朋友提供的服务器安全，访客目前只能使用模板，不能进行配置和链接数据库，请见谅！ 您可以下载在本地使用，即可拥有完全权限，谢谢支持理解；
+
 ## autocode-template-aceadmin
 用于生成aceadmin整套增删改查的模板；
 mybatis, spring, controller+service+manager+dao+mybatis mapper

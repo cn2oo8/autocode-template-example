@@ -95,7 +95,7 @@
 		${tableModel.getBizFields('allColumn')}
 	</sql>
 
-	<insert id="add" parameterType="${config.basePackage}.domain${PubUtils.addStrAfterSeparator(config.category,".")}.${tableDefine.id}">
+	<insert id="add" parameterType="${config.basePackage}.domain${PubUtils.addStrAfterSeparator(config.category,".")}.${tableDefine.id}" <% if(pkColumn!=null){ %> keyProperty="${pkColumn.dataName}" useGeneratedKeys="true" <%}%>>
 		insert into ${tableDefine.dbTableName} (${PubUtils.listToStr(columnNames)})
 			values(<%
 			 cnt=1;
@@ -106,13 +106,6 @@
 			    cnt++;
 			 }
 			%>)
-    <%
-      if(pkColumn!=null){
-    %>
-		<selectKey resultType="${pkJavaType}" keyProperty="${pkColumn.dataName}" order="AFTER">
-		   select last_insert_id() as ID from dual
-		</selectKey> 
-   <%}%>
 	 </insert>
 
     
@@ -129,13 +122,10 @@
 	</set>
 	 where ${pkColumn.columnName} = #{${pkColumn.dataName}}
   	</update>
-  
-	
 
     <%
       if(pkColumn!=null){
     %>
-
 	<delete id="deleteByPk" parameterType="${config.basePackage}.domain${PubUtils.addStrAfterSeparator(config.category,".")}.${tableDefine.id}">
 		DELETE FROM ${tableDefine.dbTableName} WHERE ${pkColumn.columnName} = #{${pkColumn.dataName}}
 	</delete>
@@ -169,8 +159,7 @@
 		<![CDATA[
 			SELECT COUNT(1) FROM ${tableDefine.dbTableName}
 		]]>
-		
-              <include refid="MAP-COMMON-SQL" />
+		<include refid="MAP-COMMON-SQL" />
 	</select>
 	
 

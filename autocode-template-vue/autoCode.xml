@@ -61,12 +61,8 @@
                   templateFile="templates/vue/list.gsp">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
-        <template id="operatePage" name="operate页面"
-                  destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/operate.vue"
-                  templateFile="templates/vue/operate.gsp">
-            <acceptDataModel>tableModel</acceptDataModel>
-            <desc>operate页面</desc>
-        </template>
+
+
         <template id="tableDefineVue" name="tableDefineVue"
                   destFile="/ui-starter/src/views/${PubUtils.packageToPath(config.category)}/${tableNameUtil.lowerCaseFirst(tableDefine.id)}/tableDefine.js"
                   templateFile="templates/vue/tableDefine.gsp">

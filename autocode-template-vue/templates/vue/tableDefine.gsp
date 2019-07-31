@@ -2,14 +2,12 @@
   def columns=tableDefine.columns
   def varDomainName=tableNameUtil.lowerCaseFirst(tableDefine.id)
   def urlPrefix=PubUtils.addStrBeforeSeparator(PubUtils.packageToPath(config.category),".")+varDomainName
-
 %>
 /**
  * 抽取出来方便
  */
 import * as renderUtil from '@/libs/renderUtil.js'
 import constants from '@/constants/constants'
-import operate from './operate.vue';
 import dictLabel from '@/views/common/dict/DictLabel'
 import dictSelect from '@/views/common/dict/DictSelect'
 import dictCheckbox from '@/views/common/dict/DictCheckBox'
@@ -80,21 +78,7 @@ data() {
                 width: 150,
                 fixed: 'right',
                 align: 'center',
-                render: (h, params) => {
-                    return h(operate, {
-                        props: {
-                            item: params.row
-                        },
-                        on: {
-                            'refreshList': () => {
-                                this.loadData()
-                            },
-                            'updateItem': (item) => {
-                                this.editItem(item)
-                            }
-                        }
-                    });
-                }
+                slot: 'operateSlot'
             }
         ],
         queryResult: {
@@ -129,7 +113,6 @@ mounted() {
     this.loadData()
 },
 components: {
-    operate,
     dictLabel,
     dictSelect,
     dictCheckbox

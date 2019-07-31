@@ -57,7 +57,18 @@
 		<add v-on:refreshList="loadData()"></add>
 		<edit ref="editModal" v-on:refreshList="loadData()"></edit>
 
-		<Table border :columns="columns" :data="queryResult.dataList" :loading="loading"></Table>
+		<Table border :columns="columns" :data="queryResult.dataList" :loading="loading">
+            <template slot-scope="{ row, index }" slot="operateSlot">
+                <Button type="primary" size="small" @click="editItem(row)">
+                    <Icon type="edit"></Icon>
+                    修改
+                </Button>
+                <Button type="error" size="small" @click="doDelete(row)">
+                    <Icon type="trash-a"></Icon>
+                    删除
+                </Button>
+            </template>
+        </Table>
 
 		<div style="margin: 10px;overflow: hidden">
 			<div style="float: right;">
@@ -110,6 +121,22 @@
             },
             editItem: function (item) {
                 this.\$refs.editModal.editItem(item)
+            },
+            doDelete(row) {
+                var params = { 'primaryKey': row.id }
+                this.\$Modal.confirm({
+                    title: '删除确认',
+                    content: '您确定要执行删除操作吗？',
+                    onOk: function() {
+                    requestUtils.postSubmit(this, constants.urls.${urlPrefix}.delete, params, function (data) {
+                        this.\$Message.success({
+                            content: '删除成功',
+                            duration: 3
+                        })
+                        this.loadData();
+                    })
+                };
+            });
             }
         },
         components: {

@@ -86,5 +86,12 @@
                   destFile="/tool_output/voteUserInfo.txt" templateFile="templates/tools/voteUserInfo.gsp">
             <acceptDataModel>cellList</acceptDataModel>
         </template>
+
+
+
+        <template id="sqlUpdate" name="sqlUpdate"
+                  destFile="/tool_output/sqlUpdate.sql" templateFile="templates/tools/sqlUpdate.gsp">
+            <acceptDataModel>cellList</acceptDataModel>
+        </template>
     </templates>
 </autoMake>

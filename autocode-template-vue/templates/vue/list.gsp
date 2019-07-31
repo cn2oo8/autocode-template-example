@@ -123,17 +123,18 @@
                 this.\$refs.editModal.editItem(item)
             },
             doDelete(row) {
+                var _this = this;
                 var params = { 'primaryKey': row.id }
                 this.\$Modal.confirm({
                     title: '删除确认',
                     content: '您确定要执行删除操作吗？',
                     onOk: function() {
                     requestUtils.postSubmit(this, constants.urls.${urlPrefix}.delete, params, function (data) {
-                        this.\$Message.success({
+                        _this.\$Message.success({
                             content: '删除成功',
                             duration: 3
                         })
-                        this.loadData();
+                        _this.loadData();
                     })
                 };
             });

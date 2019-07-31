@@ -82,9 +82,9 @@
 <script>
     import add from './add.vue';
     import edit from './edit.vue';
-    import dictSelect from '@/views/common/dict/DictSelect'
-    import dictCheckbox from '@/views/common/dict/DictCheckBox'
-    import dictRadio from '@/views/common/dict/DictRadio'
+    import dictSelect from '@/view/components/dict/DictSelect'
+    import dictCheckbox from '@/view/components/dict/DictCheckBox'
+    import dictRadio from '@/view/components/dict/DictRadio'
 
     import tableDefine from './tableDefine.js'
     import * as renderUtil from '@/libs/renderUtil.js'

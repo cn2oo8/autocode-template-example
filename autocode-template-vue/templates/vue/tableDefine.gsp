@@ -8,9 +8,9 @@
  */
 import * as renderUtil from '@/libs/renderUtil.js'
 import constants from '@/constants/constants'
-import dictLabel from '@/views/common/dict/DictLabel'
-import dictSelect from '@/views/common/dict/DictSelect'
-import dictCheckbox from '@/views/common/dict/DictCheckBox'
+import dictLabel from '@/view/components/dict/DictLabel'
+import dictSelect from '@/view/components/dict/DictSelect'
+import dictCheckbox from '@/view/components/dict/DictCheckBox'
 
 const searchFormRules = {
 <%

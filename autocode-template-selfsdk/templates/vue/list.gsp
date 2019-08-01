@@ -57,7 +57,18 @@
 		<add v-on:refreshList="loadData()"></add>
 		<edit ref="editModal" v-on:refreshList="loadData()"></edit>
 
-		<Table border :columns="columns" :data="queryResult.dataList" :loading="loading"></Table>
+		<Table border :columns="columns" :data="queryResult.dataList" :loading="loading">
+            <template slot-scope="{ row, index }" slot="operateSlot">
+                <Button type="primary" size="small" @click="editItem(row)">
+                    <Icon type="edit"></Icon>
+                    修改
+                </Button>
+                <Button type="error" size="small" @click="doDelete(row)">
+                    <Icon type="trash-a"></Icon>
+                    删除
+                </Button>
+            </template>
+        </Table>
 
 		<div style="margin: 10px;overflow: hidden">
 			<div style="float: right;">
@@ -71,9 +82,9 @@
 <script>
     import add from './add.vue';
     import edit from './edit.vue';
-    import dictSelect from '@/views/common/dict/DictSelect'
-    import dictCheckbox from '@/views/common/dict/DictCheckBox'
-    import dictRadio from '@/views/common/dict/DictRadio'
+    import dictSelect from '@/view/components/dict/DictSelect'
+    import dictCheckbox from '@/view/components/dict/DictCheckBox'
+    import dictRadio from '@/view/components/dict/DictRadio'
 
     import tableDefine from './tableDefine.js'
     import * as renderUtil from '@/libs/renderUtil.js'
@@ -110,6 +121,23 @@
             },
             editItem: function (item) {
                 this.\$refs.editModal.editItem(item)
+            },
+            doDelete(row) {
+                var _this = this;
+                var params = { 'primaryKey': row.id }
+                this.\$Modal.confirm({
+                    title: '删除确认',
+                    content: '您确定要执行删除操作吗？',
+                    onOk: function() {
+                    requestUtils.postSubmit(this, constants.urls.${urlPrefix}.delete, params, function (data) {
+                        _this.\$Message.success({
+                            content: '删除成功',
+                            duration: 3
+                        })
+                        _this.loadData();
+                    })
+                };
+            });
             }
         },
         components: {

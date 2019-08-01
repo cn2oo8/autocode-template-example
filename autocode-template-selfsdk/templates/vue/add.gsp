@@ -2,7 +2,6 @@
   def columns=tableDefine.columns
   def varDomainName=tableNameUtil.lowerCaseFirst(tableDefine.id)
   def urlPrefix=PubUtils.addStrBeforeSeparator(PubUtils.packageToPath(config.category),".")+varDomainName
-
 %>
 <template>
 	<div>
@@ -83,7 +82,6 @@
 			  	i++;
 				return ;
 			  }
-
 		    print """${column.dataName}: null"""
 		 	i++;
 			if(i<listSize) println ',';

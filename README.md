@@ -42,7 +42,7 @@ src/request/ 目录下的： axiosInstance.js, requestUtil.js
 
 ## more
 请参考项目：
-[https://github.com/cn2oo8/molicode_template_awesome](https://github.com/cn2oo8/molicode_template_awesome)
+[https://gitee.com/molicode_repo/molicode_template_awesome](https://gitee.com/molicode_repo/molicode_template_awesome)
 
 
 ## 社交

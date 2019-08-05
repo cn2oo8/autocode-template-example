@@ -19,7 +19,7 @@ const searchFormRules = {
   int i=0;
   list.each{
     def column=tableDefine.getColumnByColumnName(it);
-    print snippetTemplateUtil.getTemplate(column,'form_rule_item_vue');
+    print "\t"+snippetTemplateUtil.getTemplate(column,'form_rule_item_vue');
     i++;
     if(i<listSize) println ',';
 

@@ -56,7 +56,7 @@
     var _ = require('underscore')
 
     var validateSet = {
-        <%
+<%
 			def listSize=tableModel.listSize('updateList');
 		 	int i=0;
 			columns.each{
@@ -69,7 +69,7 @@
 				return ;
 			  }
 
-		    print snippetTemplateUtil.getTemplate(column,'form_rule_item_vue');
+		    print "\t"+snippetTemplateUtil.getTemplate(column,'form_rule_item_vue');
 		 	i++;
 			if(i<listSize) println ',';
 

@@ -62,7 +62,7 @@
 				return ;
 			  }
 
-		    print snippetTemplateUtil.getTemplate(column,'form_rule_item_vue');
+		    print "\t"+snippetTemplateUtil.getTemplate(column,'form_rule_item_vue');
 		 	i++;
 			if(i<listSize) println ',';
 
@@ -71,7 +71,7 @@
     };
 
     var formItems = {
-        <%
+<%
 		 	i=0;
 			columns.each{
 			  def column=it;
@@ -82,7 +82,7 @@
 			  	i++;
 				return ;
 			  }
-		    print """${column.dataName}: null"""
+		    print """\t\t${column.dataName}: null"""
 		 	i++;
 			if(i<listSize) println ',';
 

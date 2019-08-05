@@ -19,7 +19,7 @@ const searchFormRules = {
   int i=0;
   list.each{
     def column=tableDefine.getColumnByColumnName(it);
-    print snippetTemplateUtil.getTemplate(column,'form_rule_item_vue');
+    print "\t"+snippetTemplateUtil.getTemplate(column,'form_rule_item_vue');
     i++;
     if(i<listSize) println ',';
 
@@ -96,7 +96,7 @@ data() {
       def column=tableDefine.getColumnByColumnName(it);
       String dataName = column.dataName
       String value = tableNameUtil.genTestDataQuote(column,dictMap)
-      print """       "${dataName}": ${value}"""
+      print """\t\t\t"${dataName}": ${value}"""
       if(index < list.size()-1){
         println ","
       }else{

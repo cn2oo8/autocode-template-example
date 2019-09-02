@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<autoMake
+        xmlns="https://cn2oo8.github.io/molicode_doc/schema/autoCode"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://cn2oo8.github.io/molicode_doc/schema/autoCode https://cn2oo8.github.io/molicode_doc/schema/autoCode/autoCode-1.0.xsd">
+
+    <moliCodeVersion>1.0.0</moliCodeVersion>
+
+
+    <mavenInfo>
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.shareyi.molicode</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <artifactId>autocode-template-es</artifactId>
+        <name>ES工具类</name>
+        <developers>
+            <developer>
+                <name>david</name>
+                <email>zsb1987@foxmail.com</email>
+                <organization>www.shareyi.com</organization>
+                <organizationUrl>www.shareyi.com</organizationUrl>
+            </developer>
+        </developers>
+    </mavenInfo>
+
+    <properties>
+        <!-- 代码片段配置文件，将部分公用的代码抽取出来放置到此处 -->
+        <property key="snippet.template.path">config/molicode/snippetTemplate.xml</property>
+        <!-- 用户自定义的配置文件，配置的值以文本方式直接可以在：extendConf.get("") 到-->
+        <property key="extend.text.config">config/molicode/extendConfig.xml</property>
+        <!-- 页面依赖资源配置文件（可支持requirejs和 普通引入）-->
+        <property key="pagerequire.map.config">config/molicode/requireConfig.xml</property>
+        <!-- 数据库类型到java类型映射-->
+        <property key="dbtype.javatype.map.config">config/molicode/db2javaTypeMap.xml</property>
+        <!-- 数据库类型到页面类型映射-->
+        <property key="dbtype.columntag.map.config">config/molicode/dbType2ColumnTagMap.xml</property>
+
+    </properties>
+
+
+    <templates>
+
+
+        <template id="esMapping_v2" name="数据库表生成ES mapping, v2.x"
+                  destFile="/es_mapping/${tableDefine.dbTableName}_index.json"
+                  templateFile="templates/elasticsearch/mapping.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+    </templates>
+
+
+</autoMake>

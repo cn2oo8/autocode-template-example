@@ -80,6 +80,12 @@
         </template>
 
 
+        <template id="esMapping_v2" name="数据库表生成ES mapping, v2.x"
+                  destFile="/es_mapping/${tableDefine.dbTableName}_index.json"
+                  templateFile="templates/elasticsearch/mapping.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
     </templates>
 
 

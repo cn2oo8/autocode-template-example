@@ -44,27 +44,22 @@
 	</sql>
 
 	<sql id="ORDER-SQL">
-		<choose>
-			<when test="orderBy != null and orderBy != '' and sortType != null and sortType != ''">
-				ORDER BY \${orderBy} \${sortType}
-			</when>
-			<otherwise>
-				<%
-					def orderColumns=tableModel.orderColumns;
-					if(orderColumns!=null&&orderColumns.size()!=0){
-						print "ORDER BY ";
-						int i=0;
-						orderColumns.each{
-							print """${it.columnName} ${it.orderType}"""
-							i++;
-							if(i!=orderColumns.size()){
-								print ",";
-							}
-						}
+		<%
+			def orderColumns=tableModel.orderColumns;
+			if(orderColumns!=null&&orderColumns.size()!=0){
+				print "ORDER BY ";
+				int i=0;
+				orderColumns.each{
+					print """${it.columnName} ${it.orderType}"""
+					i++;
+					if(i!=orderColumns.size()){
+						print ",";
 					}
-				%>
-			</otherwise>
-		</choose>
+				}
+			}else{
+				println """ORDER BY ${pkColumn.columnName} DESC"""
+			}
+		%>
 	</sql>
 
 

@@ -72,22 +72,24 @@
 	 }
 	 %>	
 	</sql>
-	
+
 	<sql id="ORDER-SQL">
-	 <%
-	 def orderColumns=tableModel.orderColumns;
-	 if(orderColumns!=null&&orderColumns.size()!=0){
-	 	print "order by ";
-	 	int i=0;
-	 	orderColumns.each{
-	 		print """${it.columnName} ${it.orderType}"""
-	 		i++;
-	 		if(i!=orderColumns.size()){
-	 			print ",";
-	 		}
-	 	}
-	 }
-	 %>
+		<%
+			def orderColumns=tableModel.orderColumns;
+			if(orderColumns!=null&&orderColumns.size()!=0){
+				print "ORDER BY ";
+				int i=0;
+				orderColumns.each{
+					print """${it.columnName} ${it.orderType}"""
+					i++;
+					if(i!=orderColumns.size()){
+						print ",";
+					}
+				}
+			}else{
+				println """ORDER BY ${pkColumn.columnName} DESC"""
+			}
+		%>
 	</sql>
 	
 

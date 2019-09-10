@@ -47,6 +47,12 @@
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
 
+        <template id="esMapping_v5" name="数据库表生成ES mapping, v5.x"
+                  destFile="/es_mapping/${tableDefine.dbTableName}_index_v5.json"
+                  templateFile="templates/elasticsearch/mapping_v5.gsp">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
     </templates>
 
 

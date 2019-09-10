@@ -48,16 +48,16 @@
         String dataName = it.dataName
         String esType = getEsType(it)
         println """     "${dataName}": {"""
-        println """        "type": "${esType}","""
+        println """       "type": "${esType}" """
 
         if ('text' == esType) {
-            println """          "analyzer": "ik" """
+            println """       "analyzer": "ik" """
         } else if ('date' == esType) {
             println """,\n          "format": "yyyy-MM-dd HH:mm:ss||epoch_millis" """
         }
-        print """\n        }"""
+        print """        }"""
         if (index < columns.size() - 1) {
-            print ","
+            println ","
         }
     }
 %>

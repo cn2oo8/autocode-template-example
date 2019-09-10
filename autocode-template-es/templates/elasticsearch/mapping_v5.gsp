@@ -45,8 +45,7 @@
 <%
     columns.eachWithIndex { it, index ->
         String dataName = it.dataName
-        def dataType = tableNameUtil.getDataType(it)
-        String esType = getEsType(dataType)
+        String esType = getEsType(it)
         println """     "${dataName}": {"""
         println """        "type": "${esType}","""
 

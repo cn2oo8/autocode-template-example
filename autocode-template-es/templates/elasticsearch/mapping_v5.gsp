@@ -11,6 +11,15 @@
     esDataMapping['java.util.Date'] = "date"
     esDataMapping['java.sql.Timestamp'] = "date"
 
+    //是否为模糊匹配查询
+    def isText = { dataName ->
+        if (dataName.contains("name")) {
+            return true;
+        }
+        return false;
+    }
+
+
     def getEsType = { it ->
         def columnType = it.columnType;
         def esType = esDataMapping.get(columnType)
@@ -21,14 +30,6 @@
             esType = 'text'
         }
         return esType
-    }
-
-    //是否为模糊匹配查询
-    def isText = { dataName ->
-        if (dataName.contains("name")) {
-            return true;
-        }
-        return false;
     }
 
 

@@ -12,7 +12,8 @@
     esDataMapping['java.sql.Timestamp'] = "date"
 
     def getEsType = { it ->
-        def esType = esDataMapping.get(it)
+        def columnType = it.columnType;
+        def esType = esDataMapping.get(columnType)
         if (esType == null) {
             esType = "keyword"
         }
@@ -44,7 +45,7 @@
 <%
     columns.eachWithIndex { it, index ->
         String dataName = it.dataName
-        def dataType = tableNameUtil.getDataType(it.columnType)
+        def dataType = tableNameUtil.getDataType(it)
         String esType = getEsType(dataType)
         println """     "${dataName}": {"""
         println """        "type": "${esType}","""

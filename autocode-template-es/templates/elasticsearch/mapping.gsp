@@ -34,14 +34,17 @@
         def dataType =tableNameUtil.getDataType(it.columnType)
         String esType = getEsType(dataType)
         println """     "${dataName}": {"""
-        println """        "type": "${esType}","""
-        println """          "index": "not_analyzed" """
-        if ('date' == esType) {
+        print """        "type": "${esType}\""""
+        if('string' == esType){
+            println """,\n          "index": "not_analyzed\""""
+        }else if ('date' == esType) {
             println """,\n          "format": "yyyy-MM-dd HH:mm:ss||epoch_millis" """
+        }else{
+            println ""
         }
-        print """\n        }"""
+        print """        }"""
         if (index < columns.size() - 1) {
-            print ","
+            println ","
         }
     }
 %>

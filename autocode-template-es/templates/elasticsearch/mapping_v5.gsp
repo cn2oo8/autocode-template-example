@@ -22,7 +22,8 @@
 
     def getEsType = { it ->
         def columnType = it.columnType;
-        def esType = esDataMapping.get(columnType)
+        def dataType = tableNameUtil.getDataType(it.columnType)
+        def esType = esDataMapping.get(dataType)
         if (esType == null) {
             esType = "keyword"
         }
@@ -48,12 +49,14 @@
         String dataName = it.dataName
         String esType = getEsType(it)
         println """     "${dataName}": {"""
-        println """       "type": "${esType}" """
+        print """       "type": "${esType}\""""
 
         if ('text' == esType) {
-            println """       "analyzer": "ik" """
+            println """,\n       "analyzer": "ik\""""
         } else if ('date' == esType) {
-            println """,\n          "format": "yyyy-MM-dd HH:mm:ss||epoch_millis" """
+            println """,\n          "format": "yyyy-MM-dd HH:mm:ss||epoch_millis\""""
+        } else {
+            println ""
         }
         print """        }"""
         if (index < columns.size() - 1) {

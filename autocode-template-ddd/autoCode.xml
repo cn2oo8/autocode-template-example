@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<autoMake
+        xmlns="https://cn2oo8.github.io/molicode_doc/schema/autoCode"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://cn2oo8.github.io/molicode_doc/schema/autoCode https://cn2oo8.github.io/molicode_doc/schema/autoCode/autoCode-1.0.xsd">
+
+    <moliCodeVersion>1.0.0</moliCodeVersion>
+
+
+    <mavenInfo>
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.shareyi.molicode</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <artifactId>autocode-template-ddd</artifactId>
+        <name>moliCode生成DDD相关代码</name>
+        <description>moliCode生成DDD相关代码</description>
+
+        <developers>
+            <developer>
+                <name>david</name>
+                <email>zsb1987@foxmail.com</email>
+                <organization>www.shareyi.com</organization>
+                <organizationUrl>www.shareyi.com</organizationUrl>
+            </developer>
+        </developers>
+    </mavenInfo>
+
+    <properties>
+        <!-- 代码片段配置文件，将部分公用的代码抽取出来放置到此处 -->
+        <property key="snippet.template.path">config/molicode/snippetTemplate.xml</property>
+        <!-- 用户自定义的配置文件，配置的值以文本方式直接可以在：extendConf.get("") 到-->
+        <property key="extend.text.config">config/molicode/extendConfig.xml</property>
+        <!-- 页面依赖资源配置文件（可支持requirejs和 普通引入）-->
+        <property key="pagerequire.map.config">config/molicode/requireConfig.xml</property>
+        <!-- 数据库类型到java类型映射-->
+        <property key="dbtype.javatype.map.config">config/molicode/db2javaTypeMap.xml</property>
+        <!-- 数据库类型到页面类型映射-->
+        <property key="dbtype.columntag.map.config">config/molicode/dbType2ColumnTagMap.xml</property>
+
+    </properties>
+
+
+    <templates>
+        <template id="entity" name="entity类"
+                  destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/domain/${PubUtils.packageToPath(config.category)}/${StringUtils.lowerCase(tableDefine.id)}/entity/${tableDefine.id}.java"
+                  templateFile="templates/domain/entity.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+
+        <template id="identifier" name="identifier主键"
+                  destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/domain/${PubUtils.packageToPath(config.category)}/${StringUtils.lowerCase(tableDefine.id)}/entity/${tableDefine.id}Identifier.java"
+                  templateFile="templates/domain/identifier.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+    </templates>
+
+
+</autoMake>

@@ -23,4 +23,13 @@ public class ${tableDefine.id}Identifier implements ValueObject {
     * ${tableDefine.cnname}唯一主键
     */
    private ${pKDataType} ${pkColumn.dataName};
+
+    public ${tableDefine.id}Identifier(${pKDataType} ${pkColumn.dataName}) {
+        this.${pkColumn.dataName} = ${pkColumn.dataName};
+    }
+
+    public static ${tableDefine.id}Identifier of(${pKDataType} ${pkColumn.dataName}) {
+        Validate.notNull(${pkColumn.dataName}, CodeDetailEnum.CONTACT_ID);
+        return new ${tableDefine.id}Identifier(${pkColumn.dataName});
+    }
 }

@@ -42,6 +42,21 @@ public class ${tableDefine.id} extends BaseEntity implements AggregateRoot<${tab
         return ${varDomainName}Identifier;
     }
 
+    /**
+     * 更新信息
+     *
+     * @param updateParam
+     */
+    public void update(ContactInfo updateParam) {
+        //需要删除不必要的更新字段
+        <%
+            columns.each{
+        %>
+            this.set${upperFistName}(updateParam.get${upperFistName}());<%
+        }
+        %>
+    }
+
 
     public static class ${tableDefine.id}Builder extends BaseEntityBuilder<${tableDefine.id}, ${tableDefine.id}.${tableDefine.id}Builder> {
 

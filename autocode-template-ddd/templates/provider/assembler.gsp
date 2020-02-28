@@ -44,7 +44,7 @@ public class ${tableDefine.id}Assembler {
     * @return sdk对象
     */
    public static ${tableDefine.id}Dto assemble(${tableDefine.id} ${varDomainName}) {
-       ${tableDefine.id}Dto ${varDomainName}Dto = new ${tableDefine.id}();
+       ${tableDefine.id}Dto ${varDomainName}Dto = new ${tableDefine.id}Dto();
         <%
             columns.each{
                 def upperFistName=tableNameUtil.upperFirst(it.dataName)

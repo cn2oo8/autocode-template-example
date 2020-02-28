@@ -51,7 +51,8 @@ public class ${tableDefine.id} extends BaseEntity implements AggregateRoot<${tab
         //需要删除不必要的更新字段
         <%
             columns.each{
-        %>
+				def upperFistName=tableNameUtil.upperFirst(dataName)
+		%>
             this.set${upperFistName}(updateParam.get${upperFistName}());<%
         }
         %>

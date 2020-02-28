@@ -48,7 +48,7 @@ public class ${tableDefine.id}Assembler {
         <%
             columns.each{
                 def upperFistName=tableNameUtil.upperFirst(it.dataName)
-                println "	${varDomainName}Dto.set${it.dataName}(${varDomainName}.get${upperFistName}()); "
+                println "	${varDomainName}Dto.set${upperFistName}(${varDomainName}.get${upperFistName}()); "
             }
         %>
        return ${varDomainName}Dto;

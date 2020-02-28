@@ -53,6 +53,13 @@
                   templateFile="templates/domain/identifier.gsp" engine="groovy">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
+
+
+        <template id="assembler" name="assembler"
+                  destFile="/${config.artifactId}-provider/src/main/java/${PubUtils.packageToPath(config.basePackage)}/provider/assembler/${tableDefine.id}Assembler.java"
+                  templateFile="templates/provider/assembler.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
     </templates>
 
 

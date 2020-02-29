@@ -6,7 +6,7 @@ public static class ${data.className}Builder implements Builder<${data.className
 
     private ${data.className} entity;
 
-    public ContactBuilder() {
+    public ${data.className}Builder() {
         this.entity = new ${data.className}();
     }
 
@@ -25,7 +25,7 @@ public static class ${data.className}Builder implements Builder<${data.className
 
 %>
         public ${data.className}Builder ${field.dataName}(${field.fieldClass} ${dataName}){
-            entity.set${upperFistName}(dataName);
+            entity.set${upperFistName}(${dataName});
             return this;
         }
       <%

@@ -106,6 +106,13 @@
         </template>
 
 
+
+        <template id="builderSnap" name="builderSnap(java源码)"
+                  destFile="tmp/builderSnapshot.java"
+                  templateFile="templates/tool/repo.gsp" engine="groovy">
+            <acceptDataModel>javaSource</acceptDataModel>
+        </template>
+
     </templates>
 
 

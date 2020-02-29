@@ -47,7 +47,7 @@ public class ${tableDefine.id} extends BaseEntity implements AggregateRoot<${tab
      *
      * @param updateParam
      */
-    public void update(ContactInfo updateParam) {
+    public void update(${tableDefine.id} updateParam) {
         //需要删除不必要的更新字段
         <%
             columns.each{

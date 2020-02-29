@@ -41,6 +41,29 @@
 
 
     <templates>
+
+
+        <template id="assembler" name="assembler"
+                  destFile="/${config.artifactId}-provider/src/main/java/${PubUtils.packageToPath(config.basePackage)}/provider/assembler/${tableDefine.id}Assembler.java"
+                  templateFile="templates/provider/assembler.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+
+        <template id="appService" name="appService接口"
+                  destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/app/${tableDefine.id}AppService.java"
+                  templateFile="templates/app/appService.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+
+        <template id="appServiceImpl" name="appService实现"
+                  destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/app/impl/${tableDefine.id}AppServiceImpl.java"
+                  templateFile="templates/app/appServiceImpl.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+
         <template id="entity" name="entity类"
                   destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/domain/${PubUtils.packageToPath(config.category)}/${StringUtils.lowerCase(tableDefine.id)}/entity/${tableDefine.id}.java"
                   templateFile="templates/domain/entity.gsp" engine="groovy">
@@ -55,11 +78,34 @@
         </template>
 
 
-        <template id="assembler" name="assembler"
-                  destFile="/${config.artifactId}-provider/src/main/java/${PubUtils.packageToPath(config.basePackage)}/provider/assembler/${tableDefine.id}Assembler.java"
-                  templateFile="templates/provider/assembler.gsp" engine="groovy">
+        <template id="createDomainService" name="createDomainService"
+                  destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/domain/${PubUtils.packageToPath(config.category)}/${StringUtils.lowerCase(tableDefine.id)}/service/Create${tableDefine.id}DomainService.java"
+                  templateFile="templates/domain/createDomainService.gsp" engine="groovy">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
+
+
+        <template id="updateDomainService" name="updateDomainService"
+                  destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/domain/${PubUtils.packageToPath(config.category)}/${StringUtils.lowerCase(tableDefine.id)}/service/Update${tableDefine.id}DomainService.java"
+                  templateFile="templates/domain/updateDomainService.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+
+        <template id="validator" name="Validator"
+                  destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/domain/${PubUtils.packageToPath(config.category)}/${StringUtils.lowerCase(tableDefine.id)}/service/${tableDefine.id}Validator.java"
+                  templateFile="templates/domain/validator.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+
+        <template id="repo" name="repo仓库接口"
+                  destFile="/${config.artifactId}-domain/src/main/java/${PubUtils.packageToPath(config.basePackage)}/domain/${PubUtils.packageToPath(config.category)}/${StringUtils.lowerCase(tableDefine.id)}/repo/${tableDefine.id}Repo.java"
+                  templateFile="templates/domain/repo.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+
     </templates>
 
 

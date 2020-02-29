@@ -31,4 +31,9 @@ public static class ${data.className}Builder implements Builder<${data.className
       <%
     }
 %>
+
+    @Override
+    public ${data.className} build() {
+        return entity;
+    }
 }

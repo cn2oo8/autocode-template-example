@@ -27,7 +27,7 @@ public class Update${tableDefine.id}DomainService implements DomainService {
     private ${tableDefine.id}Repo ${varDomainName}Repo;
 
 
-    public ${tableDefine.id} update(${tableDefine.id} ${varDomainName}) {
+    public void update(${tableDefine.id} ${varDomainName}) {
           //查询参数验证
         ${varDomainName}.validateForLoad();
         ${tableDefine.id} ${varDomainName}FromRepo = ${varDomainName}Repo.load(${varDomainName}.get${tableDefine.id}Identifier(), ${varDomainName}.getCompanyBizIdentifier(), null);

@@ -40,6 +40,12 @@
 
     <templates>
 
+
+        <template id="sumTask" name="计算工时总量"
+                  destFile="/tool_output/sumTask.txt" templateFile="templates/tools/sumTask.gsp">
+            <acceptDataModel>cellList</acceptDataModel>
+        </template>
+
         <template id="toolTest" name="自定义模板和数据处理"
                   destFile="/tool_output/toolTest.txt" templateFile="templates/tools/toolTest.gsp">
 

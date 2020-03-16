@@ -52,6 +52,12 @@
         </template>
 
 
+        <template id="buildBean" name="buildBean"
+                  destFile="moli_code_front.out" templateFile="templates/model/buildBean.gsp">
+            <acceptDataModel>javaSource</acceptDataModel>
+        </template>
+
+
         <template id="javaToTableModel" name="java源码类生成表模型"
                   destFile="model/tableModel.xml" templateFile="templates/model/javaToTableModel.gsp">
             <acceptDataModel>javaSource</acceptDataModel>

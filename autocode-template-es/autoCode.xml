@@ -39,21 +39,41 @@
 
 
     <templates>
-
-
         <template id="esMapping_v2" name="数据库表生成ES mapping, v2.x"
                   destFile="/es_mapping/${tableDefine.dbTableName}_index.json"
                   templateFile="templates/elasticsearch/mapping.gsp">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
-
         <template id="esMapping_v5" name="数据库表生成ES mapping, v5.x"
                   destFile="/es_mapping/${tableDefine.dbTableName}_index_v5.json"
                   templateFile="templates/elasticsearch/mapping_v5.gsp">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
-
     </templates>
 
 
+    <customFieldGroupSetting>
+        <customFieldGroup groupKey="createTime" desc="新增时间" configShow="false">
+            <groupExpression>gmtCreate,created</groupExpression>
+        </customFieldGroup>
+        <customFieldGroup groupKey="updateTime" desc="修改时间" configShow="false">
+            <groupExpression>gmtModify,modified</groupExpression>
+        </customFieldGroup>
+        <customFieldGroup groupKey="searchKey" desc="搜索条件" configShow="true">
+            <groupExpression>*id,*name,*state,*status,*type,*code,*pin</groupExpression>
+        </customFieldGroup>
+        <customFieldGroup groupKey="queryList" desc="列表aaa" configShow="true">
+            <groupExpression>^ext*</groupExpression>
+        </customFieldGroup>
+        <customFieldGroup groupKey="addList" desc="新增" configShow="true">
+            <groupExpression>^gmtCreate,created,gmtModify,modified,*create*</groupExpression>
+        </customFieldGroup>
+        <customFieldGroup groupKey="updateList" desc="修改" configShow="true">
+            <groupExpression>^gmtCreate,created,gmtModify,modified,*create*</groupExpression>
+        </customFieldGroup>
+        <customFieldGroup groupKey="viewList" desc="查看" configShow="true">
+            <groupExpression>*</groupExpression>
+        </customFieldGroup>
+
+    </customFieldGroupSetting>
 </autoMake>

@@ -106,10 +106,15 @@
         </template>
 
 
-
         <template id="builderSnap" name="builderSnap(java源码)"
                   destFile="tmp/builderSnapshot.java"
                   templateFile="templates/tool/builderSnap.gsp" engine="groovy">
+            <acceptDataModel>javaSource</acceptDataModel>
+        </template>
+
+        <template id="copyToBuilder" name="copyToBuilder(java源码)"
+                  destFile="tmp/builderCopy.java"
+                  templateFile="templates/tool/builderCopy.gsp" engine="groovy">
             <acceptDataModel>javaSource</acceptDataModel>
         </template>
 

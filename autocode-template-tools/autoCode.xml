@@ -91,12 +91,33 @@
             <acceptDataModel>json</acceptDataModel>
         </template>
 
+        <template id="printRefundData" name="printRefundData"
+                  destFile="tools/printRefundData.csv" templateFile="templates/tools/printRefundData.gsp">
+            <acceptDataModel>json</acceptDataModel>
+        </template>
+
+
+        <template id="groupIdFetch" name="groupIdFetch"
+                  destFile="txt/groupIdFetch.txt" templateFile="templates/txt/groupIdFetch.gsp">
+            <acceptDataModel>lineList</acceptDataModel>
+        </template>
+
+
+
+
+        <template id="emun" name="生成枚举定义"
+                  destFile="moli_code_front.out" templateFile="templates/model/enum.gsp">
+            <acceptDataModel>cellList</acceptDataModel>
+        </template>
+
 
         <template id="esMapping_v2" name="数据库表生成ES mapping, v2.x"
                   destFile="/es_mapping/${tableDefine.dbTableName}_index.json"
                   templateFile="templates/elasticsearch/mapping.gsp">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
+
+
 
     </templates>
 
